@@ -13,7 +13,7 @@ Esta máquina de **Hack The Box** enseña principalmente:
 
 ---
 
-# 1️⃣ Reconocimiento inicial (Web)
+# 1 Reconocimiento inicial (Web)
 
 Entramos a:
 
@@ -47,7 +47,7 @@ Así nuestro navegador sabe resolver ese dominio.
 
 ---
 
-# 2️⃣ Identificar la tecnología
+# 2️ Identificar la tecnología
 
 Cuando vemos páginas como:
 
@@ -65,10 +65,10 @@ Esto es importante porque **PHP usa mucho `include()`**, lo que a menudo genera 
 
 **LFI** significa **Local File Inclusion**.
 
-📌 **Definición corta:**  
+ **Definición corta:**  
 Es una vulnerabilidad web donde un atacante puede hacer que el servidor **cargue o lea archivos locales del sistema** manipulando un parámetro de la URL.
 
-📍 Ejemplo:
+ Ejemplo:
 
 http://site.com/index.php?page=home.html
 
@@ -80,7 +80,7 @@ Así el servidor **muestra archivos internos del sistema**.
 
 ---
 
-# 3️⃣ Encontrar el parámetro vulnerable
+# 3️ Encontrar el parámetro vulnerable
 
 En la URL aparecía algo así:
 
@@ -104,7 +104,7 @@ Esto es **muy peligroso**.
 
 ---
 
-# 4️⃣ Descubrir LFI (Local File Inclusion)
+# 4️ Descubrir LFI (Local File Inclusion)
 
 Si podemos controlar `page`, podemos intentar leer archivos del sistema.
 
@@ -138,7 +138,7 @@ Esto confirmó que existe una vulnerabilidad:
 
 ---
 
-# 5️⃣ Pensamiento del atacante
+# 5️ Pensamiento del atacante
 
 Ahora pensamos:
 
@@ -153,7 +153,7 @@ Eso sería:
 
 ---
 
-# 6️⃣ Intentamos cargar un archivo remoto
+# 6️ Intentamos cargar un archivo remoto
 
 Probamos:
 
@@ -187,7 +187,7 @@ New Technology LAN Manager
 
 ---
 
-# 7️⃣ Qué ocurre realmente (muy importante)
+# 7️ Qué ocurre realmente (muy importante)
 
 Cuando el servidor intenta acceder a:
 
@@ -212,7 +212,7 @@ Para eso usamos:
 
 ---
 
-# 8️⃣ Qué hace Responder
+# 8️ Qué hace Responder
 
 Responder:
 
@@ -243,7 +243,7 @@ interface
 
 ---
 
-# 9️⃣ El hash capturado
+# 9️ El hash capturado
 
 Responder mostró algo como:
 
@@ -263,7 +263,7 @@ Es un **challenge-response hash**.
 
 ---
 
-# 🔟 Romper el hash
+# 10 Romper el hash
 
 Ahora usamos:
 
@@ -297,7 +297,7 @@ badminton
 
 ---
 
-# 1️⃣1️⃣ Acceso remoto al servidor
+# 11 Acceso remoto al servidor
 
 Ahora tenemos:
 
@@ -322,7 +322,7 @@ o **WinRM**.
 
 ---
 
-# 1️⃣2️⃣ Conectarnos con WinRM
+# 12 Conectarnos con WinRM
 
 Usamos:
 
@@ -336,7 +336,7 @@ Esto nos dio una **shell remota en Windows**.
 
 ---
 
-# 1️⃣3️⃣ Buscar la flag
+# 13 Buscar la flag
 
 Como en casi todas las máquinas de **Hack The Box**, las flags están en:
 
@@ -348,7 +348,7 @@ Entonces buscamos allí.
 
 ---
 
-# 🧠 El razonamiento del pentester
+#  El razonamiento del pentester
 
 El flujo mental fue:
 
@@ -372,7 +372,7 @@ acceso remoto
 
 ---
 
-# 🧠 Lo más importante que enseña esta máquina
+#  Lo más importante que enseña esta máquina
 
 Aprender esta cadena de ataque:
 
@@ -392,7 +392,7 @@ WinRM access
 
 ---
 
-# ⭐ Algo muy importante que debes recordar
+#  Algo muy importante que debes recordar
 
 Este ataque es **MUY realista**.
 
